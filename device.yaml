@@ -1,0 +1,6 @@
+devices:
+  - name:       'grill'                  # Unique name of the device
+    type:       'igrill_v2'              # Supported devices: igrill_mini, igrill_v2, igrill_v3
+    address:    'XX:XX:XX:XX:XX:XX'      # The MAC of the device
+    topic:      'cooking'    # The topic to publish on. will have name and probe number appended: <topic>/<name>/probe{1..4}
+    interval:   20                       # Polling interval

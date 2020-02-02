@@ -1,0 +1,10 @@
+version: '3'
+services:
+  igrill:
+    container_name: igrill
+    hostname: igrill
+    build: .
+    volumes:
+      - .:/igrill/config
+    network_mode: host
+    restart: unless-stopped

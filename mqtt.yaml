@@ -1,0 +1,15 @@
+#MQTT All values default to paho.mqtt.client defaults
+mqtt:
+  host:       'IPHOSTNAME'                   # Optional default 'localhost'
+  port:       1883                                 # Optional default '1883'
+#  keepalive:  60                                   # Optional default '60'
+  auth:                                            # Optional If included, username_pw_set() is called with user/password
+    username: 'USERNAME'                               # Required (when auth is present)
+    password: 'PASSWORD'                               # Optional
+#  tls:                                             # Optional If included, tls_set() is called with the following:  (default is paho.mqtt.client.tls_set() defaults)
+#    ca_certs:                                      # Optional
+#    certfile:                                      # Optional
+#    keyfile:                                       # Optional
+#    cert_reqs:                                     # Optional
+#    tls_version:                                   # Optional
+#    ciphers:                                       # Optional
