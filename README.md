@@ -68,7 +68,7 @@ My objectives were:
 
 ## Recommendation for Sensor Configuration and Lovelace UI/UX
 * Stog's post on the [Home Assistant community boards](https://community.home-assistant.io/t/weber-igrill-2-integration-with-lovelace-ui/61880) contains much inspiration and pre-written configurations
-* In the Home Assistant configuration, add MQTT Sensors(https://www.home-assistant.io/integrations/sensor.mqtt/)
+* In the Home Assistant configuration, add [MQTT Sensors](https://www.home-assistant.io/integrations/sensor.mqtt/)
 ```yaml
 sensor:
   - platform: mqtt
@@ -98,7 +98,7 @@ sensor:
     unit_of_measurement: "%"
 ```
 * Restart your Home Assistant to start picking up data from new sensors
-* In the Lovelace configuration, add a card to your preferred view to see the sensors
+* In the Lovelace configuration, add a [entities card](https://www.home-assistant.io/lovelace/entities/) to your preferred view to see the sensors
 ```yaml
 views:
   - badges: []
