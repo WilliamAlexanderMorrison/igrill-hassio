@@ -20,6 +20,7 @@ My objectives were:
 * In the Hass.io Add-On Store, install the [Mosquitto broker](https://github.com/home-assistant/hassio-addons/blob/master/mosquitto/README.md)
   * Follow all of the documentation in the `Installation` and `How to use` sections of the documentation
   * In addition, navigate to the configuration section on the add-ons page and create a `USERNAME` and `PASSWORD` in the logins array that matches the `USERNAME` and `PASSWORD` you created for Home Assistant, as follows:
+    * _While the documentation explicitly notes that this is not required, I found discussion suggesting it on [Reddit](https://www.reddit.com/r/homeassistant/comments/c8r8fc/mqtt_hassio_embedded_broker_need_help/esqlhq3/) and it resolved one of my issues.  
 ```json
 {
   "logins": [
@@ -38,7 +39,6 @@ My objectives were:
   "require_certificate": false
 }
 ```
-    * _While the documentation explicitly notes that this is not required, I found discussion suggesting it on [Reddit](https://www.reddit.com/r/homeassistant/comments/c8r8fc/mqtt_hassio_embedded_broker_need_help/esqlhq3/) and it resolved one of my issues.
 * Test that the broker is listening for published data by following the Home Assistant [MQTT testing documentation](https://www.home-assistant.io/docs/mqtt/testing/)
   * Skip the first two paragraphs, and use the `Developer Tools` method built within Home Assistant
 
