@@ -7,7 +7,7 @@ I like the iGrill device, and have invested in four probes. I do not like my bei
 My objectives were:
 * Be able to walk away from my grill and continue monitoring temperatures
 * Keep data within my home network when possible
-* Dockerize the iGrill monitor to ensure health and make repeating installation easy
+* Dockerize the iGrill monitor to ensure it never dies and make repeating installation easy
 
 ## Hardware Components
 * iGrill v2
@@ -20,7 +20,7 @@ My objectives were:
 * Install Hass.io as a docker container following instructions in the [documentation](https://github.com/home-assistant/hassio-installer)
 * In the Hass.io Add-On Store, install the [Mosquitto broker](https://github.com/home-assistant/hassio-addons/blob/master/mosquitto/README.md)
   * Follow all of the documentation in the `Installation` and `How to use` sections of the documentation
-  * In addition, navigate to the configuration section on the add-ons page and create a `USERNAME` and `PASSWORD` in the logins array that matches the `USERNAME` and `PASSWORD` you created for Home Assistant, as follows:
+  * In addition, navigate to the configuration section on the add-ons page and create a `USERNAME` and `PASSWORD` in the logins array that matches the `USERNAME` and `PASSWORD` you created for Home Assistant, as shown below:
     * _While the documentation explicitly notes that this is not required, I found discussion suggesting it on [Reddit](https://www.reddit.com/r/homeassistant/comments/c8r8fc/mqtt_hassio_embedded_broker_need_help/esqlhq3/) and it resolved my issue._
 ```json
 {
@@ -41,7 +41,7 @@ My objectives were:
 }
 ```
 * Test that the broker is listening for published data by following the Home Assistant [MQTT testing documentation](https://www.home-assistant.io/docs/mqtt/testing/)
-  * Skip the first two paragraphs, and use the `Developer Tools` method built within Home Assistant
+  * Skip the first two paragraphs, and use the `Developer Tools` method, which is built into Home Assistant
 
 ## Step-by-Step Instructions to Install  Configure bendiwka's [iGrill Monitor](https://github.com/bendikwa/igrill)
 * Install both Docker and Docker Compose following instructions in this [documentation](https://withblue.ink/2019/07/13/yes-you-can-run-docker-on-raspbian.html)
@@ -63,7 +63,7 @@ My objectives were:
 * Turn on your iGrill, plug in a probe
   * Also verify that no devices are already connected to it like your phone running the Weber app
 * Start the docker container with the command `docker-compose up -d`
-* Test that the monitor is pushing data to the Mosquitto broker by navigating to the MQTT Developer Tools on your Home Assistant and Start Listening to `#` (all) channels
+* Test that the monitor is pushing data to the Mosquitto broker by navigating to the MQTT Developer Tools within Home Assistant, and set the Listen to a Topic to `#` (all) channels and Start Listening
   * You should see a temperature update and a battery update about every 20 seconds
 
 ## Recommendation for Sensor Configuration and Lovelace UI/UX
@@ -98,7 +98,7 @@ sensor:
     unit_of_measurement: "%"
 ```
 * Restart your Home Assistant to start picking up data from new sensors
-* In the Lovelace configuration, add a [entities card](https://www.home-assistant.io/lovelace/entities/) to your preferred view to see the sensors
+* In the Lovelace configuration, add an [entities card](https://www.home-assistant.io/lovelace/entities/) to your preferred view to see the sensors
 ```yaml
 views:
   - badges: []
