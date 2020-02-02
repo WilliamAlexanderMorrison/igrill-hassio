@@ -45,7 +45,7 @@ My objectives were:
 
 ## Step-by-Step Instructions to Install  Configure bendiwka's [iGrill Monitor](https://github.com/bendikwa/igrill)
 * Install both Docker and Docker Compose following instructions in this [documentation](https://withblue.ink/2019/07/13/yes-you-can-run-docker-on-raspbian.html)
-* Create a directory with the docker and monitor configuration files in this repo by using the command `git clone https://github.com/WilliamAlexanderMorrison/igrill-hassio`
+* Create a directory with the docker and monitor configuration files in this repo by using the command `git clone https://github.com/WilliamAlexanderMorrison/igrill-hassio.git`
 * Navigate into the igrill-hassio directory 
 * Open the `device.yaml` configuration file 
   * Replace `XX:XX:XX:XX:XX:XX` with the Bluetooth MAC address of your iGrill as needed
