@@ -17,6 +17,7 @@ My objectives were:
     * _This tutorial also works on a single Raspberry Pi. I use two because my grill is not within Bluetooth range of my primary Raspberry Pi._
 
 ## Step-by-Step Instructions to Configure the Broker
+* Install both Docker and Docker Compose following instructions in this [documentation](https://withblue.ink/2019/07/13/yes-you-can-run-docker-on-raspbian.html)
 * Install Hass.io as a docker container following instructions in the [documentation](https://github.com/home-assistant/hassio-installer)
 * In the Hass.io Add-On Store, install the [Mosquitto broker](https://github.com/home-assistant/hassio-addons/blob/master/mosquitto/README.md)
   * Follow all of the documentation in the `Installation` and `How to use` sections of the documentation
@@ -58,11 +59,11 @@ My objectives were:
   * Make any other configuration changes as desired
 * Follow both of the [troubleshooting](https://github.com/bendikwa/igrill#troubleshooting) instructions provided by bendikwa
 * Reboot your Raspberry Pi
-* Build the docker with the command `docker-compose build`
+* Build the docker with the command `sudo docker-compose build`
   * This will create a docker container with bendiwka's iGrill Monitor repo
 * Turn on your iGrill, plug in a probe
   * Also verify that no devices are already connected to it like your phone running the Weber app
-* Start the docker container with the command `docker-compose up -d`
+* Start the docker container with the command `sudo docker-compose up -d`
 * Test that the monitor is pushing data to the Mosquitto broker by navigating to the MQTT Developer Tools within Home Assistant, and set the Listen to a Topic to `#` (all) channels and Start Listening
   * You should see a temperature update and a battery update about every 20 seconds
 
